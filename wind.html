@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    <title>Wind Speed</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Visualization Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+    <!--Nav Bar-->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                     aria-expanded="false">
@@ -22,9 +27,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Changes in Latitudes, Changes in ...</a>
             </div>
+
+            <!-- Collect the nav links, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--left nav link-->
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html">LATITUDE
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+                <!--Right nav link-->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots
@@ -32,13 +47,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="temp.html">Temperature</a>
+                                <a href="temperature.html">Max Temperature</a>
                             </li>
                             <li>
-                                <a href="humid.html">Humidity</a>
+                                <a href="humidity.html">Humidity</a>
                             </li>
                             <li>
-                                <a href="cloud.html">Cloudiness</a>
+                                <a href="cloudiness.html">Cloudiness</a>
                             </li>
                             <li>
                                 <a href="wind.html">Wind Speed</a>
@@ -51,99 +66,63 @@
                     <li>
                         <a href="data.html">Data</a>
                     </li>
+
                 </ul>
             </div>
-
+            <!-- /.navbar-collapse -->
         </div>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="sigline">
-                    <p>
-                        David W. Jones | Unversity of Texas at Austin : Data Analytics & Visualization |
-                    </p>
-                </div>
-            </div>
-        </div>
+        <!-- /.container-fluid -->
     </nav>
 
+    <!--Main Grid-->
     <div class="container">
-        <div class="row row-grid">
-
-            <div class="col-md-8">
-                <div class="box box-left">
-                    <section id="intro">
-                        <h1>Windiness</h1>
-                        <hr>
-                        <figure>
-                            <a target="_blank" href="Wind_Speed_Latitude.png">
-                                <img id="viz-main" src="Wind_Speed_Latitude.png" alt="Latitude vs. Wind Speed">
-                            </a>
-                        </figure>
-
-                        <section id="summary">
-                            <p>There is no clustering or pattern of wind speed around the equator. The data seems to prove out
-                                the Coriolis Effect, such that the latitude will impact the direction of the wind, but not
-                                the speed of the wind.
-                            </p>
-                        </section>
-
-                    </section>
-                </div>
-            </div>
-
-
-            <div class="col-md-4">
-                <div class="box box-right">
-                    <h2>Visualizations</h2>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="main-box">
+                    <h1 class="main-pg-header">Wind Speed</h1>
                     <hr>
-
-
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3 col-md-6">
-                            <figure>
-                                <a href="temp.html">
-                                    <img id="landing-viz" src="Temp_Latitude.png" alt="Latitude vs. Temperature">
-                                </a>
-                            </figure>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-6">
-                            <figure>
-                                <a href="humid.html">
-                                    <img id="landing-viz" src="Humidity_Latitude.png" alt="Latitude vs. Humidity">
-                                </a>
-                            </figure>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-6">
-                            <figure>
-                                <a href="cloud.html">
-                                    <img id="landing-viz" src="Cloudiness_Latitude.png" alt="Latitude vs. Cloudiness">
-                                </a>
-                            </figure>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-6">
-                            <figure>
-                                <a href="wind.html">
-                                    <img id="landing-viz" src="Wind_Speed_Latitude.png" alt="Latitude vs. Wind Speed">
-                                </a>
-                            </figure>
-                        </div>
-
+                    <div class="summary txt">
+                        <img id="result-img" src="https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/wind.png?raw=true", alt="Wind Speed vs Latitude">
+                        <p>
+                            There is no direct correlation between wind speed and latitude.  However, the scatterplot 
+                            shows that most of the cities have  wind speed of 10mph or less.
+                        </p>
                     </div>
                 </div>
             </div>
-
+            <div class="col-md-5">
+                <div class="side-box">
+                    <h2 class="main-pg-subheader">Visualizations</h2>
+                    <hr>
+                    <div class="sidebar">
+                        <a href="temperature.html">
+                            <img id="side-img1" src="https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/temp.png?raw=true", alt="Temp vs. Latitude Scatterplt">
+                        </a>
+                        <a href="humidity.html">
+                            <img id="side-img2" src="https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/humidity.png?raw=true", alt="Humidity vs. Latitude Scatterplt">
+                        </a>
+                        <a href="cloudiness.html">
+                            <img id="side-img3" src="https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/cloudiness.png?raw=true", alt="Cloudiness vs. Latitude Scatterplt">
+                        </a>
+                        <a href="wind.html">
+                            <img id="side-img4" src="https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/wind.png?raw=true", alt="Wind Speed vs. Latitude Scatterplt">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!--Footer-->
+    <div class="container-fluid bottom-footer page-footer">
+        <div class="row">
+            <div class="col text-center" <p id="footer-txt">
+                &copy; Copyright Coding Bootcamp 2018
+                </p>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous">
-        </script>
 </body>
 
 </html>

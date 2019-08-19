@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    <title>Latitude Weather Analysis</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Visualization Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
 </head>
-
 <body>
+    <!--Nav Bar-->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                     aria-expanded="false">
@@ -22,10 +25,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Changes in Latitudes, Changes in ...</a>
             </div>
-
+    
+            <!-- Collect the nav links, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--left nav link-->
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html">LATITUDE
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+                <!--Right nav link-->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots
@@ -33,13 +45,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="temp.html">Temperature</a>
+                                <a href="temperature.html">Max Temperature</a>
                             </li>
                             <li>
-                                <a href="humid.html">Humidity</a>
+                                <a href="humidity.html">Humidity</a>
                             </li>
                             <li>
-                                <a href="cloud.html">Cloudiness</a>
+                                <a href="cloudiness.html">Cloudiness</a>
                             </li>
                             <li>
                                 <a href="wind.html">Wind Speed</a>
@@ -52,121 +64,58 @@
                     <li>
                         <a href="data.html">Data</a>
                     </li>
+
                 </ul>
             </div>
-
+            <!-- /.navbar-collapse -->
         </div>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="sigline">
-                    <p>
-                        David W. Jones | Unversity of Texas at Austin : Data Analytics & Visualization |
-                    </p>
-                </div>
-            </div>
-        </div>
+        <!-- /.container-fluid -->
     </nav>
 
-
-    <div class="container">
-        <div class="row row-grid">
-            <div class="col-md-8">
-                <div class="box box-left">
-                    <section id="intro">
-                        <h1>Summary</h1>
-                        <hr>
-                        <figure>
-                            <a target="_blank" href="Ploting_graph_of_Cities.png">
-                                <img id="viz-main" src="Ploting_graph_of_Cities.png" alt="Latitude of cities">
-                            </a>
-                        </figure>
-
-                        <section id="summary">
-                            <p>This project utilizes Python, API’s, and JSON traversals to try and answer a fundamental question:
-                                “What’s the weather like as we get closer to the equator?”
-                            </p>
-
-                            <p> Assigning 1,500 random Latitude and Longitudes, I utilized the Python CitiPy library to find
-                                the city closest to the Lat/Lon (dropping all duplicates) to get a listing of over 600 cities.
-                                I utilized OpenWeatherMapAPI to get the weather for the cities (dropping cities with no data)
-                                to create a dataframe of weather information for over 500 cities.
-                            </p>
-
-                            <p>
-                                The dataframe is saved to CSV and the data is analyzed across the three climate zones (Tropical Zone, Temperate Zone, and
-                                Polar Zone). To showcase the relationship between latitude and temperature/humidity/cloudiness/wind
-                                speed I utilize MatplotLib scatter plots to view:
-                            </p>
-
-                            <ul>
-                                <li>Temperature (F) vs. Latitude</li>
-                                <li>Humidity (%) vs. Latitude</li>
-                                <li>Cloudiness (%) vs. Latitude</li>
-                                <li>Wind Speed (mph) vs. Latitude</li>
-
-                            </ul>
-
-                        </section>
-
-                    </section>
+    <!--Main Grid-->
+    <div class= "container">
+        <div class= "row">
+            <div class= "col-md-7">
+                <div class= "main-box">
+                <h1 class= "main-pg-header">Summary: Latitude vs. X</h1>
+                <hr>
+                <div class= "summary txt">
+                    <img id= "main-img" src= "https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/temp.png?raw=true", alt= "Temp vs Latitude">
+                    <p>
+                        The purpose of this project was to analyze how weather changes as you get closer to the equator.  
+                        To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.  
+                        After assembling the dataset, we used Matplotlib, to plot various aspects of the weather vs. latitude.  
+                        Factors we looked at included: temperature, cloudiness, wind speed, and humidity.  This site provides the sourced
+                        data and visualizations created as part of the analysis, as well as explanation and descriptions of any trends and correlations witnessed.
+                    </p>
+                </div>
                 </div>
             </div>
-
-
-            <div class="col-md-4">
-                <div class="box box-right">
-                    <h2>Visualizations</h2>
-                    <hr>
-
-
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3 col-md-6">
-                            <figure>
-                                <a href="temp.html">
-                                    <img id="landing-viz" src="Temp_Latitude.png" alt="Latitude vs. Temperature">
-                                </a>
-                            </figure>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-6">
-                            <figure>
-                                <a href="humid.html">
-                                    <img id="landing-viz" src="Humidity_Latitude.png" alt="Latitude vs. Humidity">
-                                </a>
-                            </figure>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-6">
-                            <figure>
-                                <a href="cloud.html">
-                                    <img id="landing-viz" src="Cloudiness_Latitude.png" alt="Latitude vs. Cloudiness">
-                                </a>
-                            </figure>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-6">
-                            <figure>
-                                <a href="wind.html">
-                                    <img id="landing-viz" src="Wind_Speed_Latitude.png" alt="Latitude vs. Wind Speed">
-                                </a>
-                            </figure>
-                        </div>
-
+            <div class= "col-md-5">
+                <div class= "side-box">
+                <h2 class= "main-pg-subheader">Visualizations</h2>
+                <hr>
+                <div class= "sidebar">
+                    <a href= "temperature.html"><img id= "side-img1" src= "https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/temp.png?raw=true", alt= "Temp vs. Latitude Scatterplt"></a>
+                    <a href= "humidity.html"><img id= "side-img2" src= "https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/humidity.png?raw=true", alt= "Humidity vs. Latitude Scatterplt"></a>
+                    <a href= "cloudiness.html"><img id= "side-img3" src= "https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/cloudiness.png?raw=true", alt= "Cloudiness vs. Latitude Scatterplt"></a>
+                    <a href= "wind.html"><img id= "side-img4" src= "https://github.com/aksklar/web_viz_dashboard/blob/master/weatherPy%20images/wind.png?raw=true", alt= "Wind Speed vs. Latitude Scatterplt"></a>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous">
-        </script>
+    <!--Footer-->
+    <div class= "container-fluid bottom-footer page-footer">
+        <div class= "row">
+            <div class= "col text-center"
+            <p id= "footer-txt">
+                &copy; Copyright Coding Bootcamp 2018
+            </p>
+            </div>
+        </div>
+    </div>
 
 </body>
-
 </html>
