@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    <title>Latitude Weather Analysis</title>
+    <title>Wind Speed</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -24,7 +24,6 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Changes in Latitudes, Changes in ...</a>
             </div>
-
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -67,45 +66,25 @@
         </div>
     </nav>
 
-
     <div class="container">
         <div class="row row-grid">
+
             <div class="col-md-8">
                 <div class="box box-left">
                     <section id="intro">
-                        <h1>Summary</h1>
+                        <h1>Windiness</h1>
                         <hr>
                         <figure>
-                            <a target="_blank" href="Ploting_graph_of_Cities.png">
-                                <img id="viz-main" src="Ploting_graph_of_Cities.png" alt="Latitude of cities">
+                            <a target="_blank" href="Wind_Speed_Latitude.png">
+                                <img id="viz-main" src="Wind_Speed_Latitude.png" alt="Latitude vs. Wind Speed">
                             </a>
                         </figure>
 
                         <section id="summary">
-                            <p>This project utilizes Python, API’s, and JSON traversals to try and answer a fundamental question:
-                                “What’s the weather like as we get closer to the equator?”
+                            <p>There is no clustering or pattern of wind speed around the equator. The data seems to prove out
+                                the Coriolis Effect, such that the latitude will impact the direction of the wind, but not
+                                the speed of the wind.
                             </p>
-
-                            <p> Assigning 1,500 random Latitude and Longitudes, I utilized the Python CitiPy library to find
-                                the city closest to the Lat/Lon (dropping all duplicates) to get a listing of over 600 cities.
-                                I utilized OpenWeatherMapAPI to get the weather for the cities (dropping cities with no data)
-                                to create a dataframe of weather information for over 500 cities.
-                            </p>
-
-                            <p>
-                                The dataframe is saved to CSV and the data is analyzed across the three climate zones (Tropical Zone, Temperate Zone, and
-                                Polar Zone). To showcase the relationship between latitude and temperature/humidity/cloudiness/wind
-                                speed I utilize MatplotLib scatter plots to view:
-                            </p>
-
-                            <ul>
-                                <li>Temperature (F) vs. Latitude</li>
-                                <li>Humidity (%) vs. Latitude</li>
-                                <li>Cloudiness (%) vs. Latitude</li>
-                                <li>Wind Speed (mph) vs. Latitude</li>
-
-                            </ul>
-
                         </section>
 
                     </section>
@@ -160,13 +139,11 @@
     </div>
 
 
-
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous">
         </script>
-
 </body>
 
 </html>
